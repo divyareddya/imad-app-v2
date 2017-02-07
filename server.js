@@ -12,11 +12,15 @@ var content - {
     content: `
     <p>this is the content for my first article</p>
     <p> Fix #1: Run diskpart. If the 0xE0000100 error appears while you're trying to install Windows using the installation DVD, you can use diskpart to clean your partitions first and then install Windows again. Running the clean command of the diskpart utility will remove all data from the partition.</p>
-    `
-    
-};
+    `};
 
-var htmltemplate - `
+function createTemplate (data){
+    var title= data.title;
+    var heading= data.heading;
+    var date= data.date;
+    var content= data.content;
+    
+var htmltemplate = `
 <html>
     <head>
         <title>
@@ -40,16 +44,16 @@ var htmltemplate - `
     </div>
     </body>
 </html>
-
-
 `;
+    return htmlTemplate;
+}
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 app.get('/article-one',function(req, res){
-  res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
+  res.send(createTemplate(articleone));
 });
 
 app.get('/article-two',function(req, res){
