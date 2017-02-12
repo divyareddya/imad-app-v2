@@ -5,7 +5,8 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleone - {
+var articleOne =
+{
     title: 'article-one | Divya',
     heading: 'Article one',
     date: 'sep 5, 2016',
@@ -14,6 +15,8 @@ var articleone - {
     <p> Fix #1: Run diskpart. If the 0xE0000100 error appears while you're trying to install Windows using the installation DVD, you can use diskpart to clean your partitions first and then install Windows again. Running the clean command of the diskpart utility will remove all data from the partition.</p> `
     
 };
+
+
 
 function createTemplate (data){
     var title= data.title;
