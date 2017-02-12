@@ -6,7 +6,7 @@ var app = express();
 app.use(morgan('combined'));
 
 var articles = { 
-var articleOne: {
+    'article-one: {
     title: 'article-one | Divya',
     heading: 'Article one',
     date: 'sep 5, 2016',
@@ -15,7 +15,7 @@ var articleOne: {
     <p> Fix #1: Run diskpart. If the 0xE0000100 error appears while you're trying to install Windows using the installation DVD, you can use diskpart to clean your partitions first and then install Windows again. Running the clean command of the diskpart utility will remove all data from the partition.</p> `
     
 },
-var articleTwo: {
+ 'article-two': {
     title: 'article-two | Divya',
     heading: 'Article two',
     date: 'sep 10, 2016',
@@ -29,7 +29,7 @@ A blank PivotTable and Field List will appear on a new worksheet</p>`
 
     
 },
-var articleThree:{
+ 'article-three':{
     title: 'article-third | Divya',
     heading: 'Article third',
     date: 'sep 15, 2016',
@@ -39,7 +39,7 @@ var articleThree:{
     
     
     
-},
+}
 };
 
 
@@ -83,16 +83,8 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one',function(req, res){
-  res.send(createTemplate(articleone));
-});
-
-app.get('/article-two',function(req, res){
-   res.sendFile(path.join(__dirname, 'ui', 'article-two.html')); 
-});
-
-app.get('/article-three',function(req, res){
-    res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
+app.get('/articleName',function(req, res){
+  res.send(createTemplate(articles[articleName]));
 });
 
 app.get('/ui/style.css', function (req, res) {
