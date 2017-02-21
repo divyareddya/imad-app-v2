@@ -50,7 +50,7 @@ function createTemplate (data){
     var heading= data.heading;
     var date= data.date;
     var content= data.content;
-    var htmltemplate = `
+    var htmlTemplate = `
     <html>
     <head>
         <title>
@@ -75,7 +75,7 @@ function createTemplate (data){
     </body>
     </html>
 `;
-    return htmltemplate;
+    return htmlTemplate;
 }
 
 app.get('/', function (req, res) {
