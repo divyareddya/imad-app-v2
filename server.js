@@ -5,6 +5,15 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var Pool = require('pg').Pool;
+var config = {
+    user: 'divyareddya' ,
+    database: 'divyareddya' ,
+    host: 'cloud.imad.hasura.io' ,
+    post: '5432' ,
+    password: process.env.DBPASSWORD
+};
+
 var articles = { 
     'article-one': {
     title: 'article-one | Divya',
@@ -41,8 +50,22 @@ A blank PivotTable and Field List will appear on a new worksheet</p>`
     
 }
 };
-
-
+var pool = new Pool(config);
+app.get('/test-db',function(req, res)
+{
+    pool.query("SELECT * FROM mytable", function(err, result)
+    {
+        if(err)
+        {
+            res.status(500).send(err.toString());
+        
+        }
+        else
+        {
+            res.send(JSON.stringify(resuly));
+        }
+    });
+});
 
 
 function createTemplate (data){
