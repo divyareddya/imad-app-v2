@@ -11,7 +11,7 @@ var config = {
     database: 'divyareddya' ,
     host: 'db.imad.hasura-app.io' ,
     port: '5432' ,
-    password: process.env.DBPASSWORD
+    password: 'db-divyareddya-62036'
 };
 
 
