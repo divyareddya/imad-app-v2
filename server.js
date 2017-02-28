@@ -10,7 +10,7 @@ var config = {
     user: 'divyareddya' ,
     database: 'divyareddya' ,
     host: 'cloud.imad.hasura.io' ,
-    post: '8080' ,
+    port: '8080' ,
     password: process.env.DBPASSWORD
 };
 
