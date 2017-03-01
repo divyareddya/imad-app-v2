@@ -105,13 +105,6 @@ app.get('/myfunction()', function (req, res) {
 
 
 
-app.get('/article/:articleName',function(req, res){
-    var articleName = req.params.articleName;
-    
-    pool.query("SELECT * FROM mytable WHERE console = " + req.params.articleName)
-    var articleData;
-  res.send(createTemplate(articleData));
-});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
