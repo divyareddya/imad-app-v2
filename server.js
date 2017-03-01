@@ -32,7 +32,17 @@ app.get('/test-db',function(req, res)
     });
 });
 
+app.get('/myapp', function(req, res){
 
+// 1. Create the button.
+var button = document.createElement("button");
+button.innerHTML = "Do Something";
+// 2. Append somewhere.
+var body = document.getElementsByTagName("body")[0];
+body. appendChild(button);
+// 3. Add event handler.
+
+});
 function createTemplate (data){
     var title= data.title;
     var heading= data.heading;
@@ -81,17 +91,7 @@ app.get('/myfunction()', function (req, res) {
 
 
 
-app.get('/myapp', function(req, res){
 
-// 1. Create the button.
-var button = document.createElement("button");
-button.innerHTML = "Do Something";
-// 2. Append somewhere.
-var body = document.getElementsByTagName("body")[0];
-body. appendChild(button);
-// 3. Add event handler.
-
-});
 app.get('/article/:articleName',function(req, res){
     var articleName = req.params.articleName;
     
