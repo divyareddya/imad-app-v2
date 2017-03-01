@@ -15,7 +15,7 @@ var config = {
 };
 
 
-app.get("/send", function(req, res){
+app.post("/send", function(req, res){
   var newID = req.body.ID;
   res.redirect("/action");
 });
