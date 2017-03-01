@@ -84,8 +84,8 @@ app.get('/myfunction()', function (req, res) {
 app.get('/myapp', function(req, res){
 
 // 1. Create the button.
-var button = document. createElement("button");
-button. innerHTML = "Do Something";
+var button = document.createElement("button");
+button.innerHTML = "Do Something";
 // 2. Append somewhere.
 var body = document. getElementsByTagName("body")[0];
 body. appendChild(button);
