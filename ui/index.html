@@ -2,15 +2,21 @@
 <html>
 <body>
 
-<p>Enter console details</p>
+<h3>Enter Console URL</h3>
+
+<input type="search" id="mySearch" placeholder="Search for something..">
+
+
 
 <button onclick="myFunction()">Submit</button>
 
+
 <script>
 function myFunction() {
-    var x = document.createElement("TEXTAREA");
-     document.body.appendChild(x);
-    </script>
+    var x = document.getElementById("mySearch").placeholder;
+    document.getElementById("demo").innerHTML = x;
+}
+</script>
 
 </body>
 </html>
