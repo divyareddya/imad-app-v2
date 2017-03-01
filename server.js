@@ -37,7 +37,7 @@ app.get('/myapp', function(req, res){
 // 1. Create the button.
 var button = document.createElement("button");
 button.innerHTML = "Do Something";
-buttonnode.setAttribute("onclick",function(){alert('Clicked')})
+buttonnode.setAttribute("onclick",function(){alert('Clicked')});
 
 });
 function createTemplate (data){
