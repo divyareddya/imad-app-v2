@@ -5,6 +5,16 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+//var express    = require('express');
+var bodyParser = require('body-parser');
+var app = express();
+app.use(bodyParser());
+
+app.post('/uploaded',function(req, res, next){
+    var txt_folder_name = req.body.txtFolderName;
+    //...
+});
+
 var Pool = require('pg').Pool;
 var config = {
     user: 'divyareddya' ,
