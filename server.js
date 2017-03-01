@@ -68,10 +68,28 @@ function createTemplate (data){
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+  
+
 });
 
-app.get('/myapp', function(req, res){
+app.get('/myfunction()', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
   
+
+});
+
+
+
+
+app.get('/myapp', function(req, res){
+  <h3>Enter Console URL</h3>
+
+<input type="search" id="mySearch" placeholder="Search for something..">
+
+
+
+
+<button>Submit</button>
 });
 app.get('/article/:articleName',function(req, res){
     var articleName = req.params.articleName;
