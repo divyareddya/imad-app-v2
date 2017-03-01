@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html>
-<body>
+<HTML>
+    <BODY>
+<form id="fileupload" method="POST" enctype="multipart/form-data">
 
-<h3>Enter Console URL</h3>
-
-<input type="search" id="mySearch" placeholder="Search for something..">
-
-
-<form action="/send" method="POST">
-    <input type="text" name="newID" placeholder="Enter your ID"/>
-    <input type="submit" value="Click here to submit the form"/>
+<div class="row fileupload-buttonbar">
+    <textarea name="txtFolderName" rows="1"></textarea>
+    <button type="create" class="btn btn-primary start">
+                <i class="glyphicon glyphicon-upload"></i>
+                <span>Create Folder</span>
+            </button>
+</div>
 </form>
-
-</body>
-</html>
+</BODY>
+</HTML>
