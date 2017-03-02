@@ -1,19 +1,13 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-
 var app = express();
 app.use(morgan('combined'));
-
-//var express    = require('express');
 var bodyParser = require('body-parser');
-var app = express();
 app.use(bodyParser(json));
 
-app.post('/uploaded',function(req, res, next){
-    var txt_folder_name = req.body.txtFolderName;
 
-});
+
 
 var Pool = require('pg').Pool;
 var config = {
@@ -39,59 +33,6 @@ app.get('/test-db',function(req, res)
             res.send(JSON.stringify(result));
         }
     });
-});
-
-app.get('/myapp', function(req, res){
-
-// 1. Create the button.
-var button = document.createElement("button");
-button.innerHTML = "Do Something";
-buttonnode.setAttribute("onclick",function(){alert('Clicked')});
-
-});
-function createTemplate (data){
-    var title= data.title;
-    var heading= data.heading;
-    var date= data.date;
-    var content= data.content;
-    var htmlTemplate = `
-    <html>
-    <head>
-        <title>
-          ${title}
-        </title>
-        <meta name-"viewport" content-"width-device-width, initial-scale-1" />
-        <link href="/ui/style.css" rel="stylesheet" />
-    </head>
-    
-    <body>
-    <div class="container">
-        <h1>
-            ${heading}
-        </h1>
-        <div>
-        ${date}
-        </div>
-        <div>
-        ${content}
-        </div>
-    </div>
-    </body>
-    </html>
-`;
-    return htmlTemplate;
-}
-
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
-  
-
-});
-
-app.get('/myfunction()', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
-  
-
 });
 
 
