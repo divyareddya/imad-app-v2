@@ -8,11 +8,11 @@ app.use(morgan('combined'));
 //var express    = require('express');
 var bodyParser = require('body-parser');
 var app = express();
-app.use(bodyParser());
+app.use(bodyParser(json));
 
 app.post('/uploaded',function(req, res, next){
     var txt_folder_name = req.body.txtFolderName;
-    //...
+
 });
 
 var Pool = require('pg').Pool;
@@ -23,13 +23,6 @@ var config = {
     port: '5432' ,
     password: 'db-divyareddya-62036'
 };
-
-
-app.post("/send", function(req, res){
-  var newID = req.body.ID;
-  res.redirect("/action")
-});
-
 
 var pool = new Pool(config);
 app.get('/test-db',function(req, res)
